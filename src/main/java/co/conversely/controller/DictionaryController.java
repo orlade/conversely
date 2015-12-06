@@ -2,7 +2,9 @@ package co.conversely.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import co.conversely.domain.Dictionary;
@@ -22,7 +24,13 @@ public class DictionaryController {
 
   @RequestMapping("")
   public String index(Dictionary dictionary) {
-    return "dictionaries";
+    return "dictionary/list";
+  }
+
+  @RequestMapping("{id}")
+  public String index(@PathVariable("id") Long id, Model model) {
+    model.addAttribute("dictionary", repo.findOne(id));
+    return "dictionary/item";
   }
 
 }

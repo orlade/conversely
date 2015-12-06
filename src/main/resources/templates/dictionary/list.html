@@ -9,7 +9,7 @@
     
     <ul>
       <li th:each="dictionary : ${dictionaries}">
-        <span th:text="${dictionary.name}">Sample name</span>
+        <a th:href="@{/dictionaries/{id}(id=${dictionary.id})}" th:text="${dictionary.name}">Dictionary name</a>
       </li>
     </ul>
     

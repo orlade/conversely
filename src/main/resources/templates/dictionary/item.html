@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" layout:decorator="layouts/default">
+<head>
+<title th:text="${dictionary.name}">Name</title>
+</head>
+<body>
+  <div layout:fragment="content">
+    <h1 th:text="${dictionary.name}">${name}</h1>
+
+    <table>
+      <tr>
+        <th>Name</th>
+        <td th:text="${dictionary.name}"></td>
+      </tr>
+      <tr>
+        <th>Description</th>
+        <td th:text="${dictionary.description}"></td>
+      </tr>
+    </table>
+
+  </div>
+</body>
+</html>
