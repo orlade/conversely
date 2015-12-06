@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <div class="navbar" th:fragment="header">
+    <div class="container">
+      <ul>
+        <li class="active"><a href="#" th:href="@{/}"><strong>Conversely</strong></a></li>
+        <li><a href="#" th:href="@{/dictionaries}">Dictionaries</a></li>
+      </ul>
+
+      <div sec:authorize="hasRole('ROLE_USER')">
+        Hello, <span sec:authentication="name">Bob</span> -
+        
+        <form th:action="@{/logout}" method="post">
+          <input type="submit" value="Logout"></input>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--/*  Each token will be replaced by their respective titles in the resulting page. */-->
+<title layout:title-pattern="$DECORATOR_TITLE - $CONTENT_TITLE">Conversely</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+  <div th:replace="fragments/header :: header"></div>
+
+  <div class="container">
+    <div layout:fragment="content">
+      <h1>Static content for prototyping purposes only</h1>
+      <p>Lorem ipsum dolor sit amet.</p>
+    </div>
+
+    <div th:replace="fragments/footer :: footer"></div>
+  </div>
+</body>
+</html>
