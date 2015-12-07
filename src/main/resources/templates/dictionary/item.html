@@ -17,6 +17,16 @@
         <td th:text="${dictionary.description}"></td>
       </tr>
     </table>
+    
+    <h2>Entries</h2>
+    
+    <table>
+        <tr><th>Source</th><th>Target</th></tr>
+        <tr th:each="entry : ${dictionary.entries}">
+            <td th:text="${entry.source.text}"></td>
+            <td th:text="${entry.target.text}"></td>
+        </tr>
+    </table>
 
   </div>
 </body>

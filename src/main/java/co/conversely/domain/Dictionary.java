@@ -1,11 +1,13 @@
 package co.conversely.domain;
 
 import java.io.Serializable;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Dictionary implements Serializable {
@@ -21,6 +23,9 @@ public class Dictionary implements Serializable {
 
   @Column
   private String description;
+
+  @OneToMany(targetEntity=Entry.class, mappedBy = "dictionary")
+  private Set<Entry> entries;
 
   protected Dictionary() {}
 
@@ -50,6 +55,14 @@ public class Dictionary implements Serializable {
 
   public void setDescription(String description) {
     this.description = description;
+  }
+
+  public Set<Entry> getEntries() {
+    return entries;
+  }
+
+  public void setEntries(Set<Entry> entries) {
+    this.entries = entries;
   }
 
 }

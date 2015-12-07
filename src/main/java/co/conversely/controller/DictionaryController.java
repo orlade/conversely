@@ -23,12 +23,12 @@ public class DictionaryController {
   }
 
   @RequestMapping("")
-  public String index(Dictionary dictionary) {
+  public String showList(Dictionary dictionary) {
     return "dictionary/list";
   }
 
   @RequestMapping("{id}")
-  public String index(@PathVariable("id") Long id, Model model) {
+  public String showItem(@PathVariable("id") Long id, Model model) {
     model.addAttribute("dictionary", repo.findOne(id));
     return "dictionary/item";
   }

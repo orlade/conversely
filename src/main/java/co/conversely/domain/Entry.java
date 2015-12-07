@@ -2,7 +2,7 @@ package co.conversely.domain;
 
 import java.io.Serializable;
 
-import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
@@ -11,6 +11,7 @@ import javax.persistence.OneToOne;
 /**
  * A single entry of a {@link Dictionary}, containing source and target {@link Phrase}s.
  */
+@Entity
 public class Entry implements Serializable {
 
   private static final long serialVersionUID = 1L;
@@ -23,7 +24,6 @@ public class Entry implements Serializable {
   private Dictionary dictionary;
 
   @OneToOne(optional = false)
-  @Column(nullable = false)
   private Phrase source;
 
   @OneToOne(optional = false)
