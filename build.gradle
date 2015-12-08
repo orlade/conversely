@@ -26,15 +26,24 @@ targetCompatibility = 1.8
 
 dependencies {
     compile("org.springframework.boot:spring-boot-devtools")
-    
+
     compile("org.springframework.boot:spring-boot-starter-data-rest")
     compile("org.springframework.boot:spring-boot-starter-data-jpa")
     compile("org.springframework.boot:spring-boot-starter-security")
     compile("org.springframework.boot:spring-boot-starter-thymeleaf")
-    
+
     compile("org.thymeleaf.extras:thymeleaf-extras-springsecurity4")
-    
+
     compile("com.h2database:h2")
+
+    testCompile('junit:junit')
+    testCompile("org.springframework.boot:spring-boot-starter-test",
+            "info.cukes:cucumber-jvm:1.1.8",
+            "info.cukes:cucumber-core:1.1.8",
+            "info.cukes:cucumber-java:1.1.8",
+            "info.cukes:cucumber-junit:1.1.8",
+            "info.cukes:cucumber-spring:1.1.8",
+            'commons-io:commons-io:2.4')
 }
 
 task wrapper(type: Wrapper) {
